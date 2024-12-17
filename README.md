@@ -96,7 +96,7 @@ sudo bash install.sh
 - easiest workaround is by installing gnu coreutils with homebrew:
   ```bash
     brew install coreutils
-    ln -s /usr/local/bin/greadlink /usr/local/bin/readlink
+    ln -s $HOMEBREW_PREFIX/bin/greadlink $HOMEBREW_PREFIX/bin/readlink
   ```
 - after that, you can continue installation and usage as normal
 
