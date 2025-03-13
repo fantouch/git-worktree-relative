@@ -153,13 +153,13 @@ absolute_worktree=`greadlink -f "$worktree_target"`
 
 verbose_output
 verbose_output 'get relative path from worktree to repo'
-verbose_output "  \$ path_worktree_to_repo=\`realpath --relative-to="$absolute_worktree" "$absolute_repository"\`"
-path_worktree_to_repo=`realpath --relative-to="$absolute_worktree" "$absolute_repository"`
+verbose_output "  \$ path_worktree_to_repo=\`grealpath --relative-to="$absolute_worktree" "$absolute_repository"\`"
+path_worktree_to_repo=`grealpath --relative-to="$absolute_worktree" "$absolute_repository"`
 
 verbose_output
 verbose_output 'get relative path from repo to worktree'
-verbose_output "  \$ path_repo_to_worktree=\`realpath --relative-to="$absolute_repository" "$absolute_worktree"\`"
-path_repo_to_worktree=`realpath --relative-to="$absolute_repository" "$absolute_worktree"`
+verbose_output "  \$ path_repo_to_worktree=\`grealpath --relative-to="$absolute_repository" "$absolute_worktree"\`"
+path_repo_to_worktree=`grealpath --relative-to="$absolute_repository" "$absolute_worktree"`
 
 #sed -i "s+$absolute_repository+$path_worktree_to_repo+g" "$absolute_worktree/.git" # replace with sed: before=absolute path to repository, after=relative path to repository, location={worktree}/.git file
 #sed -i "s+$absolute_worktree+$path_repo_to_worktree+g" "$worktree_link_content/gitdir" # replace with sed: before=absolute path to worktree, after=relative path to worktree, location={repo}/.git/worktrees/{wtname}/gitdir file
